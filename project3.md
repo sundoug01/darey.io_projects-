@@ -51,7 +51,7 @@ This file will normally contain information about your application and the depen
 <img width="471" alt="npm init " src="https://github.com/sundoug01/darey.io_projects-/assets/28840209/913386e6-bf58-4468-93ae-8ca877692eb8">
 
 ### Step 2
-- Expressjs installation 
+- ExpressJS installation 
 
 
 To use express, install it using npm:
@@ -72,7 +72,7 @@ Open the index.js file with the command below
 ```
 vim index.js
 ```
-Type the code below into it and save. Do not get overwhelmed by the code you see. For now, simply paste the code into the file.
+Type the code below into it and save. 
 
 ```
   const express = require('express');
@@ -119,7 +119,7 @@ If all is good, running the command below  should output:
 - Display list of all tasks
 - Delete a completed task
 
-For each task, we need to create routes that will define various endpoints that the To-do app will depend on. So let us create a folder routes
+For each task, we need to create routes that will define various endpoints that the To-do app will depend on. Create a folder routes
 ```
 mkdir routes
 ```
@@ -137,7 +137,7 @@ Open the file with the command below
 ```
 vim api.js
 ```
-Copy below code in the file. (Do not be overwhelmed with the code)
+Copy below code in the file.
 ```
 const express = require ('express');
 const router = express.Router();
@@ -349,7 +349,7 @@ Open the package.json file
 ```
 vi package.json
 ```
-Add the key value pair in the package.json file "proxy": "http://localhost:5000".
+Add the key value pair in the package.json file *"proxy": "http://localhost:5000"*.
 The whole purpose of adding the proxy configuration in number 3 above is to make it possible to access the application directly from the browser by simply calling the server url like http://localhost:5000 rather than always including the entire path like http://localhost:5000/api/todos
 
 Now, ensure you are inside the Todo directory, and simply do:
