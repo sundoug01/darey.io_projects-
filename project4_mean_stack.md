@@ -37,7 +37,7 @@ sudo apt install -y nodejs
 ```
 
 ## Step 2: Install MongoDB
-MongoDB stores data in flexible, JSON-like documents. Fields in a database can vary from document to document and data structure can be changed over time. For our example application, we are adding book records to MongoDB that contain book name, isbn number, author, and number of pages.
+MongoDB stores data in a flexible, JSON-like documents. For the application,book records to be added to  MongoDB will contain book name, isbn number, author, and number of pages.
 ```
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 ```
@@ -183,7 +183,7 @@ module.exports = mongoose.model('Book', bookSchema);
 
 ## Step 4 – Access the routes with AngularJS
 
-AngularJS provides a web framework for creating dynamic views in your web applications. In this tutorial, we use AngularJS to connect our web page with Express and perform actions on our book register.
+AngularJS provides a web framework for creating dynamic views in your web applications. In this project, I am using AngularJS to connectthe web page with Express and perform actions on the book register.
 
 - Change the directory back to ‘Books’
 ```
@@ -305,15 +305,15 @@ node server.js
 <img width="505" alt="node server" src="https://github.com/sundoug01/darey.io_projects-/assets/28840209/03899b11-a3d9-45ee-86db-f5077b97d4cc">
 
 
-- The server is now up and running, we can connect it via port 3300. You can launch a separate Putty or SSH console to test what curl command returns locally.
+- The server is now up and running,connecting to  it via port 3300. You can launch a separate Putty or SSH console to test what curl command returns locally.
 ```
 curl -s http://localhost:3300
 ```
 It shall return an HTML page, it is hardly readable in the CLI, but we can also try and access it from the Internet.
 
-For this – you need to open TCP port 3300 in your AWS Web Console for your EC2 Instance.
+For this – I will need to open TCP port 3300 in AWS Web Console EC2 Instance.
 
-- Access via browser using the public IP or DNS name on port 3300
+- Accessing via browser using the public IP or DNS name on port 3300
 
 ![Result](https://github.com/sundoug01/darey.io_projects-/assets/28840209/08b3fd30-ac7d-4bc3-bde9-b21913b73407)
 
