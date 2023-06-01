@@ -21,13 +21,18 @@ Note: Save the private key created (.pem file) securely as it will be used to co
 Install Apache using Ubuntu’s package manager ‘apt’:
 
 Update a list of packages in package manager:
+```
 sudo apt update
-
+```
 Run apache2 package installation : 
+```
 sudo apt install apache2
+```
 
-To check status of the apache2 service, rub this command : sudo systemctl status apache2
-
+To check status of the apache2 service, run the command : 
+```
+sudo systemctl status apache2
+```
 <img width="562" alt="Status of the apache2 service" src="https://user-images.githubusercontent.com/28840209/236909045-962358aa-9610-4b28-8b96-f7692d866749.png">
 
 Need to configure port 80 on the EC2 configuration to open inbound  connection through port 80
@@ -38,9 +43,9 @@ Access the webserver via the public IP assigned to the EC2 instance
 ![Apache web](https://user-images.githubusercontent.com/28840209/236911676-391f22e8-e04b-4925-9c14-6a2604258bd8.png)
 
 ## Installing Mysql
-
-$ sudo apt install mysql-server
-
+```
+sudo apt install mysql-server
+```
 <img width="639" alt="Mysql status " src="https://user-images.githubusercontent.com/28840209/236914961-8b8d1bb4-24ee-4e42-8a91-27d19223868a.png">
 
 To connect to the instance db, run *sudo mysql
@@ -48,8 +53,10 @@ To connect to the instance db, run *sudo mysql
 ## Installing PHP
 I have Apache installed to serve the  content and MySQL installed to store and manage my data. PHP is the component of my setup that will process code to display dynamic content to the end user.In addition to the php package,php-mysql is required, a PHP module that allows PHP to communicate with MySQL-based databases.Also required is libapache2-mod-php to enable Apache to handle PHP files.
 
-Run this command to install : *sudo apt install php libapache2-mod-php php-mysql
-
+Run this command to install : 
+```
+sudo apt install php libapache2-mod-php php-mysql
+```
 Verifying the version of the php installed
 
 <img width="488" alt="PHP version check " src="https://user-images.githubusercontent.com/28840209/236919133-96f49c9e-9ddb-4123-b8e0-c717f430c579.png">
@@ -59,30 +66,46 @@ I have installed all the components of the LAMP stack, to test with a php script
 ## Creating a virual host for my website using apache
 -Setting up a domain called firstproject
 
-Create the directory for firstproject: *sudo mkdir /var/www/firstproject*
-
-Assign ownership of the directory to the current user : *sudo chown -R $USER:$USER /var/www/firstproject*
-
-Create and open a new configuration file in Apache's sites-available directory : *sudo vi /etc/apache2/sites-available/firstproject.conf*
-
+Create the directory for firstproject:
+```
+sudo mkdir /var/www/firstproject*
+```
+Assign ownership of the directory to the current user :
+```
+sudo chown -R $USER:$USER /var/www/firstproject*
+```
+Create and open a new configuration file in Apache's sites-available directory : 
+```
+sudo vi /etc/apache2/sites-available/firstproject.conf*
+```
 Add the configuration below to the file:
 
 <img width="416" alt="Virtual host config " src="https://user-images.githubusercontent.com/28840209/236922397-cf9da683-236f-4d14-8db8-d1fd017aeb9a.png">
 
 Save and close the file.
 
-Use the ls command to show the new file in the sites-available directory : *sudo ls /etc/apache2/sites-available*
-
+Use the ls command to show the new file in the sites-available directory : 
+```
+sudo ls /etc/apache2/sites-available*
+```
 With the virtual host configuration, I am instructing apache to serve firstproject using /var/www/firstproject as its web root directory
 
-Enabling the new virtual host using a2ensite : *sudo a2ensite projectlamp*
-
-To disable Apache’s default website use a2dissite command , type: *sudo a2dissite 000-default*
-
-To make sure your configuration file doesn’t contain syntax errors, run: *sudo apache2ctl configtest*
-
-Finally, reload Apache so these changes take effect: *sudo systemctl reload apache2*
-
+Enabling the new virtual host using a2ensite : 
+```
+sudo a2ensite projectlamp*
+```
+To disable Apache’s default website use a2dissite command , type: 
+```
+sudo a2dissite 000-default*
+```
+To make sure your configuration file doesn’t contain syntax errors, run: 
+```
+sudo apache2ctl configtest*
+```
+Finally, reload Apache so these changes take effect: 
+```
+sudo systemctl reload apache2*
+```
 New website is ready but the web root is empty.
 
 ![Empty web root](https://user-images.githubusercontent.com/28840209/236928534-1b9a694f-5552-48c4-a184-7de29128b0ec.png)
