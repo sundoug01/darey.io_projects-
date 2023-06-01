@@ -1,4 +1,4 @@
-#### implementing a web solution based on the MERN stack in AWS Cloud [To deploy a simple To-Do application that creates To-Do lists]
+## Implementing a web solution based on the MERN stack in AWS Cloud [To deploy a simple To-Do application that creates To-Do lists]
 
 > ### MERN Web stack consists of following components:
 * MongoDB: A document-based, No-SQL database used to store application data in a form of documents.
