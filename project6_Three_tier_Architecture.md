@@ -249,10 +249,12 @@ sudo yum install mysql
 ```
 sudo mysql -u admin -p -h <DB-Server-Private-IP-address>
 ```
+<img width="545" alt="image" src="https://github.com/sundoug01/darey.io_projects-/assets/28840209/8e08c43a-bde4-40dd-80ca-68bd1d190132">
+
 
 - Verify if you can successfully execute SHOW DATABASES; command and see a list of existing databases.
 
-Change permissions and configuration so Apache could use WordPress:
+- Change permissions and configuration so Apache could use WordPress:
 
 Enable TCP port 80 in Inbound Rules configuration for your Web Server EC2 (enable from everywhere 0.0.0.0/0 or from your workstation’s IP)
 
