@@ -143,10 +143,18 @@ sudo rsync -av /home/recovery/logs/. /var/log
 sudo blkid
 ```
 
+<img width="1167" alt="image" src="https://github.com/sundoug01/darey.io_projects-/assets/28840209/c709ad5d-115f-4ed5-b876-8a4e9ac12cf6">
+
+
+
 ```
 sudo vi /etc/fstab
 ```
 Update /etc/fstab in this format using your own UUID and rememeber to remove the leading and ending quotes.
+
+<img width="818" alt="image" src="https://github.com/sundoug01/darey.io_projects-/assets/28840209/9268d053-afd7-44e5-ae7d-faf6324ddb66">
+
+
 
 
 
@@ -156,6 +164,8 @@ Update /etc/fstab in this format using your own UUID and rememeber to remove the
  sudo systemctl daemon-reload
 ```
 > Verify your setup by running ``` df -h ``` , output must look like this:
+
+<img width="574" alt="image" src="https://github.com/sundoug01/darey.io_projects-/assets/28840209/171862b8-38b2-4ff8-89d6-4880f2f2583e">
 
 
 # Step 2 — Prepare the Database Server
