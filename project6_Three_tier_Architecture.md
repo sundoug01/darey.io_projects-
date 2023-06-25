@@ -1,5 +1,3 @@
-![image](https://github.com/sundoug01/darey.io_projects-/assets/28840209/cfaf6911-8301-42d2-acae-0dfba5b142f6)
-
 
 # Step 1 — Prepare a Web Server
 
