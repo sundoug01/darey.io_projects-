@@ -1,4 +1,4 @@
-
+![image](https://github.com/sundoug01/darey.io_projects-/assets/28840209/cfaf6911-8301-42d2-acae-0dfba5b142f6)
 
 
 # Step 1 — Prepare a Web Server
@@ -276,7 +276,7 @@ sudo mysql -u admin -p -h <DB-Server-Private-IP-address>
   ```
 Enable TCP port 80 in Inbound Rules configuration for your Web Server EC2 (enable from everywhere 0.0.0.0/0 or from your workstation’s IP)
 
-Try to access from your browser the link to your WordPress http://<Web-Server-Public-IP-Address>/
+Try to access from your browser the link to your WordPress ``` http://<Web-Server-Public-IP-Address>/```
 
 ![image](https://github.com/sundoug01/darey.io_projects-/assets/28840209/0c0ec331-aa81-4c1a-81c0-a1022205fa2c)
 
