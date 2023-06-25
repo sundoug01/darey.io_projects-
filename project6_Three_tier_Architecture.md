@@ -219,8 +219,8 @@ sudo systemctl restart httpd
 
 - Configure SELinux Policies
 ```
-  sudo chown -R apache:apache /var/www/html/wordpress
-  sudo chcon -t httpd_sys_rw_content_t /var/www/html/wordpress -R
+  sudo chown -R apache:apache /var/www/html/
+  sudo chcon -t httpd_sys_rw_content_t /var/www/html/ -R
   sudo setsebool -P httpd_can_network_connect=1
 ```
 # Step 4 — Install MySQL on your DB Server EC2
@@ -264,11 +264,21 @@ sudo mysql -u admin -p -h <DB-Server-Private-IP-address>
 
 - Verify if you can successfully execute SHOW DATABASES; command and see a list of existing databases.
 
-- Change permissions and configuration so Apache could use WordPress:
+- Change permissions and configuration so Apache could use the files :
 
+<img width="559" alt="image" src="https://github.com/sundoug01/darey.io_projects-/assets/28840209/973a7cde-9575-4a6e-9bfd-6f648592f00e">
+  
+
+- Add connection strings in the ``` wp-config.php ``` file
+```
+  sudo vi wp-config.php
+
+  ```
 Enable TCP port 80 in Inbound Rules configuration for your Web Server EC2 (enable from everywhere 0.0.0.0/0 or from your workstation’s IP)
 
-Try to access from your browser the link to your WordPress http://<Web-Server-Public-IP-Address>/wordpress/
+Try to access from your browser the link to your WordPress http://<Web-Server-Public-IP-Address>/
 
+![image](https://github.com/sundoug01/darey.io_projects-/assets/28840209/0c0ec331-aa81-4c1a-81c0-a1022205fa2c)
 
+![image](https://github.com/sundoug01/darey.io_projects-/assets/28840209/2e6434db-9013-4a32-a1d0-d8121d00d820)
 
