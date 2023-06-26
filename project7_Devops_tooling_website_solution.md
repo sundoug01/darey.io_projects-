@@ -70,6 +70,8 @@ Important note: In order for NFS server to be accessible from your client, you m
 
 # STEP 2 — Configure the database server
 
+Spin up an EC2 Ubuntu instance
+
 [Install MySQL server ](https://linuxhint.com/install-mysql-on-ubuntu-22-04/)
 
 Create a database and name it tooling
@@ -83,11 +85,11 @@ create user 'webaccess'@'webserver-subnet-id' identified by 'YourPasswordHere'
 Grant permission to webaccess user on tooling database to do anything only from the webservers subnet cidr
 
 ```
-grant all privileges on tooling.* to 'webaccess'@subnet';
+grant all privileges on tooling.* to 'webaccess'@'subnet cidr';
 ```
 
-# Step 3 — Prepare the Web Servers
-We need to make sure that our Web Servers can serve the same content from shared storage solutions, in our case – NFS Server and MySQL database.
+# Step 3 — Prepare the Web Servers (3 Redhat ec2 instances)
+Need to ensure that the Web Servers can serve the same content from shared storage solutions, in this case – NFS Server and MySQL database.
 You already know that one DB can be accessed for reads and writes by multiple clients. For storing shared files that our Web Servers will use – we will utilize NFS and mount previously created Logical Volume lv-apps to the folder where Apache stores files to be served to the users (/var/www).
 >
 Configure NFS client (this step must be done on all three servers)
@@ -95,6 +97,8 @@ Deploy a Tooling application to our Web Servers into a shared NFS folder
 Configure the Web Servers to work with a single MySQL database
 Launch a new EC2 instance with RHEL 8 Operating System
 >
+
+
 -Install NFS client
 ```
 sudo yum install nfs-utils nfs4-acl-tools -y
@@ -150,7 +154,8 @@ Verify that Apache files and directories are available on the Web Server in /var
 
 
 
-Locate the log folder for Apache on the Web Server and mount it to NFS server’s export for logs. Repeat step №4 to make sure the mount point will persist after reboot.
+Locate the log folder for Apache on the Web Server and mount it to NFS server’s export for logs. Add it to */etc/fstab* for the mount to persist after reboot.
+
 ```
 <NFS-Server-Private-IP>:/mnt/logs /var/log/httpd nfs defaults 0 0
 ```
