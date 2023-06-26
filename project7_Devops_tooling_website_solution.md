@@ -140,7 +140,7 @@ sudo systemctl enable php-fpm
 sudo setsebool -P httpd_execmem 1
 ```
 
-**Repeat steps 1-5 for another 2 Web Servers.
+*Repeat steps 1-5 for another 2 Web Servers*
 
 Verify that Apache files and directories are available on the Web Server in /var/www and also on the NFS server in /mnt/apps. If you see the same files – it means NFS is mounted correctly. You can try to create a new file touch test.txt from one server and check if the same file is accessible from other Web Servers.
 
@@ -167,7 +167,7 @@ sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo systemctl restart mysql.service
 ```
 
--Fork the tooling source code from Darey.io Github Account to your Github account. (Learn how to fork a repo here)
+-Fork the tooling source code from Darey.io Github Account to your Github account.
 
 -Deploy the tooling website’s code to the Webserver. Ensure that the html folder from the repository is deployed to /var/www/html
 
@@ -178,20 +178,33 @@ To make this change permanent – open following config file ```  sudo vi /etc/s
 
 
 
-Update the website’s configuration to connect to the database (in /var/www/html/functions.php file). Apply tooling-db.sql script to your database using this command ``` mysql -h <databse-private-ip> -u <db-username> -p <db-pasword> < tooling-db.sql ```
+- Update the website’s configuration to connect to the database (in /var/www/html/functions.php file).
+
+  
+<img width="1198" alt="image" src="https://github.com/sundoug01/darey.io_projects-/assets/28840209/58c6f5f1-fe8a-460e-9deb-c3663b5a874b">
+
+The config changes will be replicated to Web-server-02 once the changes on web-server-01 is committed 
+
+-Apply tooling-db.sql script to your database using this command ``` mysql -h <databse-private-ip> -u <db-username> -p <db-pasword> < tooling-db.sql ```
+
+
+mysql -h 172.31.1.92 -u webaccess -p tooling < tooling-db.sql
 
 <img width="569" alt="image" src="https://github.com/sundoug01/darey.io_projects-/assets/28840209/19012cee-aaa9-4773-bfe6-483bdc1fa789">
 
 
 <img width="580" alt="image" src="https://github.com/sundoug01/darey.io_projects-/assets/28840209/eafae1a2-1c26-47fe-a48c-e8974230cbda">
 
+
 -Create in MySQL a new admin user with username: myuser and password: password:
 
-INSERT INTO ‘users’ (‘id’, ‘username’, ‘password’, ’email’, ‘user_type’, ‘status’) VALUES
+INSERT INTO users (‘id’, ‘username’, ‘password’, ’email’, ‘user_type’, ‘status’) VALUES
 -> (1, ‘myuser’, ‘5f4dcc3b5aa765d61d8327deb882cf99’, ‘user@mail.com’, ‘admin’, ‘1’);
 
-Open the website in your browser http://<Web-Server-Public-IP-Address-or-Public-DNS-Name>/index.php and make sure you can login into the websute with myuser user.
+- Open the website in your browser http://<Web-Server-Public-IP-Address-or-Public-DNS-Name>/index.php and make sure you can login into the websute with myuser user.
+
+![image](https://github.com/sundoug01/darey.io_projects-/assets/28840209/62f8cc14-6a0d-43b5-88f6-0aaee8a8f563)
 
 
+![image](https://github.com/sundoug01/darey.io_projects-/assets/28840209/8bf291a6-0f7c-40ac-b73f-0c64c1c377a0)
 
-mysql -h 172.31.1.92 -u webaccess -p tooling < tooling-db.sql
