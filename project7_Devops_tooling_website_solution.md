@@ -89,6 +89,7 @@ grant all privileges on tooling.* to 'webaccess'@'subnet cidr';
 ```
 
 # Step 3 — Prepare the Web Servers (3 Redhat ec2 instances)
+
 Need to ensure that the Web Servers can serve the same content from shared storage solutions, in this case – NFS Server and MySQL database.
 You already know that one DB can be accessed for reads and writes by multiple clients. For storing shared files that our Web Servers will use – we will utilize NFS and mount previously created Logical Volume lv-apps to the folder where Apache stores files to be served to the users (/var/www).
 >
@@ -144,7 +145,7 @@ sudo systemctl enable php-fpm
 sudo setsebool -P httpd_execmem 1
 ```
 
-*Repeat steps 1-5 for another 2 Web Servers*
+*Repeat  steps for the other 2 Web Servers*
 
 Verify that Apache files and directories are available on the Web Server in /var/www and also on the NFS server in /mnt/apps. If you see the same files – it means NFS is mounted correctly. You can try to create a new file touch test.txt from one server and check if the same file is accessible from other Web Servers.
 
