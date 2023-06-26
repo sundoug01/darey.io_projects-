@@ -167,10 +167,6 @@ sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo systemctl restart mysql.service
 ```
 
--Fork the tooling source code from Darey.io Github Account to your Github account.
-
--Deploy the tooling website’s code to the Webserver. Ensure that the html folder from the repository is deployed to /var/www/html
-
 Note 1: Do not forget to open TCP port 80 on the Web Server.
 
 Note 2: If you encounter 403 Error – check permissions to your /var/www/html folder and also disable SELinux sudo setenforce 0
