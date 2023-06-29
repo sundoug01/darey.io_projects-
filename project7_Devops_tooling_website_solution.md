@@ -52,11 +52,11 @@ sudo systemctl restart nfs-server.service
 ```
 sudo vi /etc/exports
 ```
-
+```
 /mnt/apps <Subnet-CIDR>(rw,sync,no_all_squash,no_root_squash)
 /mnt/logs <Subnet-CIDR>(rw,sync,no_all_squash,no_root_squash)
 /mnt/opt <Subnet-CIDR>(rw,sync,no_all_squash,no_root_squash)
-
+```
 
 ```
 sudo exportfs -arv
