@@ -64,6 +64,12 @@ sudo vi /etc/apache2/sites-available/000-default.conf
         ProxyPassReverse / balancer://mycluster/
 ```
 
+<img width="1103" alt="image" src="https://github.com/sundoug01/darey.io_projects-/assets/28840209/8eac0764-c3fb-4ffb-adf3-4d941190e576">
+
+
+
+<img width="747" alt="image" src="https://github.com/sundoug01/darey.io_projects-/assets/28840209/b21ba263-ce02-45ea-a2f6-b153a4709ada">
+
 
 - Restart apache server
 ```
@@ -74,4 +80,11 @@ bytraffic balancing method will distribute incoming load between your Web Server
 You can also study and try other methods, like: bybusyness, byrequests, heartbeat
 
 Verify that our configuration works – try to access your LB’s public IP address or Public DNS name from your browser:
+```
 http://<Load-Balancer-Public-IP-Address-or-Public-DNS-Name>/index.php
+```
+
+![image](https://github.com/sundoug01/darey.io_projects-/assets/28840209/ff393347-9c2e-493a-b7e6-20811c3f349f)
+
+![image](https://github.com/sundoug01/darey.io_projects-/assets/28840209/b3c47cb0-c730-4086-8eb6-f85cf01293ba)
+
