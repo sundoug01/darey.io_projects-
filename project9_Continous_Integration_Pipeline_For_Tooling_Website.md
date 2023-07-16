@@ -1,7 +1,10 @@
 
 
 # Step 1 – Install Jenkins server
-- Create an AWS EC2 server based on Ubuntu Server 20.04 LTS and name it “Jenkins”
+- Create an AWS EC2 server based on Ubuntu Server 20.04 LTS and name it “Jenkins-server”
+
+  <img width="1138" alt="image" src="https://github.com/sundoug01/darey.io_projects-/assets/28840209/78d0603c-57f8-40bf-a600-28840dd04ab7">
+
 
 - Jenkins Debian Packages
 [Jenkins installation](https://pkg.jenkins.io/debian/)
