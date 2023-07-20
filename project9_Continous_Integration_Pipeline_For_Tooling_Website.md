@@ -1,4 +1,11 @@
 
+## Tooling website deployment automation with CI 
+
+- The architecture
+  
+![image](https://github.com/sundoug01/darey.io_projects-/assets/28840209/f43e78f2-6b50-4b46-8c7e-83f7521edc8a)
+
+
 
 # Step 1 – Install Jenkins server
 - Create an AWS EC2 server based on Ubuntu Server 20.04 LTS and name it “Jenkins-server”
